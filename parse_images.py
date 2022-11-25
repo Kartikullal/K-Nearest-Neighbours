@@ -1,5 +1,7 @@
 import struct
 import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
 
 class parse_images():
     def __init__(self, image_path, label_path):

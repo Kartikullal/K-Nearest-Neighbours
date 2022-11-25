@@ -1,4 +1,6 @@
 import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
 
 class KNN():
     def __init__(self, k, metric):
@@ -43,7 +45,7 @@ class KNN():
         predictions = np.zeros((X_test.shape[0]))
         for i in range(X_test.shape[0]):
             predictions[i] = stats.mode(self.Y_train[(np.argsort(self.similarity_matrix[:,i]))[::self.order][0:self.k]])[0].item()
-        #predictions = stats.mode(k_closest, axis = 1)[0].flatten()
+
         return predictions
     
     
